@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  background-color: lavenderblush;
+}
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  min-width: 800px;
+}
+
+

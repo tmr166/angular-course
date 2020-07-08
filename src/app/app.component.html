@@ -1,0 +1,24 @@
+<!--
+  Notes:
+  - Don't need html, head, or body tags if being called in a Component
+  - css file is imported from the angular.json file in the "styles" object
+
+  Purpose:
+  - Called from Component: EventsListComponent
+  - Uses object: event from a Component
+  - Uses class formats from style.css
+-->
+<top-navbar></top-navbar>
+<div class="container">
+  <div class="d-flex row p-3">
+    <img style="height: 100px" src="{{funFacts.imageURL.icon}}"/>
+    <h1 class="align-self-end">Hi :)</h1>
+  </div>
+  <!--Passing event data to event-thumbnail component-->
+  <!--Use '#' to create a local variable that points to the corresponding component
+      EX) #fun_var points to the fun-facts component-->
+  <fun-facts #fun_var [event]="funFacts"></fun-facts>
+  <!--#fun_var can access objects/functions from it's corresponding component: fun-facts-->
+  <button class="btn btn-primary" (click)="fun_var.poke()">I'm a button</button>
+</div>
+

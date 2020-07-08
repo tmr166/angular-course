@@ -1,0 +1,25 @@
+<div class="content">
+  <h3>{{event.name}}'s boring stuff</h3>
+  <ul>
+    <li>Now: {{event.day}} at {{event.time}}</li>
+    <li>Hunger Percentage: {{event.hungerPercent}}%</li>
+  </ul>
+
+  <h3>{{event.name}}'s fun facts</h3>
+
+  <!--  style.css is imported from the angular.json file-->
+  <div class="fun-facts">
+    <div>
+      <h4>Starter: {{event.pokemon.starter}}</h4>
+      <img src="{{event.imageURL.starter}}"/>
+    </div>
+    <div>
+      <h4>Favorite: {{event.pokemon.favorite}}</h4>
+      <img src="{{event.imageURL.favorite}}"/>
+    </div>
+    <div>
+      <h4>Legendary: {{event.pokemon.legendary}}</h4>
+      <img src="{{event.imageURL.legendary}}"/>
+    </div>
+  </div>
+</div>
