@@ -10,15 +10,12 @@
 -->
 <top-navbar></top-navbar>
 <div class="container">
-  <div class="d-flex row p-3">
-    <img style="height: 100px" src="{{funFacts.imageURL.icon}}"/>
-    <h1 class="align-self-end">Hi :)</h1>
-  </div>
   <!--Passing event data to event-thumbnail component-->
   <!--Use '#' to create a local variable that points to the corresponding component
       EX) #fun_var points to the fun-facts component-->
-  <fun-facts #fun_var [event]="funFacts"></fun-facts>
+  <fun-facts *ngFor="let fact of funFacts" [event]="fact" ></fun-facts>
+<!--  <fun-facts #fun_var></fun-facts>-->
   <!--#fun_var can access objects/functions from it's corresponding component: fun-facts-->
-  <button class="btn btn-primary" (click)="fun_var.poke()">I'm a button</button>
+<!--  <button class="btn btn-primary" (click)="fun_var.poke()">I'm a button</button>-->
 </div>
 

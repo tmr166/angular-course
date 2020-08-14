@@ -22,6 +22,7 @@ export class EventsAppComponent {
       day: '7/6/2020',
       time: '01:24 pm',
       hungerPercent: 44.55,
+      energyPercent: 55,
       imageURL: {
         icon: '../assets/images/Blissey.png',
         starter: '../assets/images/Piplup.jpg',
@@ -40,6 +41,7 @@ export class EventsAppComponent {
       day: '7/6/2020',
       time: '01:24 pm',
       hungerPercent: 44.55,
+      energyPercent: 12,
       imageURL: {
         icon: '../assets/images/Cynthia.jpg',
         starter: '../assets/images/Bulbasaur.jpg',
@@ -57,7 +59,8 @@ export class EventsAppComponent {
       name: 'Misty',
       day: '7/6/2020',
       time: '01:24 pm',
-      hungerPercent: 44.55,
+      // hungerPercent: 44.55,
+      energyPercent: 23,
       imageURL: {
         icon: '../assets/images/Misty.png',
         starter: '../assets/images/Totodile.png',
@@ -76,6 +79,7 @@ export class EventsAppComponent {
       day: '7/6/2020',
       time: '01:24 pm',
       hungerPercent: 44.55,
+      energyPercent: 76,
       imageURL: {
         icon: '../assets/images/May.jpg',
         starter: '../assets/images/Torchic.jpg',
@@ -89,4 +93,5 @@ export class EventsAppComponent {
       }
     }
   ];
+
 }

@@ -1,25 +1,58 @@
 <div class="content">
-  <h3>{{event.name}}'s boring stuff</h3>
-  <ul>
-    <li>Now: {{event.day}} at {{event.time}}</li>
-    <li>Hunger Percentage: {{event.hungerPercent}}%</li>
-  </ul>
 
-  <h3>{{event.name}}'s fun facts</h3>
+  <div class="d-flex row p-3">
+<!--
+  Null handling: Add a question mark '?' after an object in case the object is null
+                 the tag will still print
+  -->
+    <img style="height: 100px" src="{{event?.imageURL.icon}}"/>
+    <h1 class="align-self-end">Hi :)</h1>
+  </div>
+  <!--
+    ngSwitch is like an if else statement for a variable
+    Here, the variable is event.name
+    the if statement is if event.name == 'Scarlet' print the admin <span>
+    the default if no switch cases are met: print the guest <span>
+-->
+  <h3>{{event?.name}}'s boring stuff</h3>
+<!--
+   If statement to set a class:
+   Here, if event.name == 'Scarlet', set class = admin
+-->
+  <div [class.admin]="event?.name ==='Scarlet'"  [ngSwitch]="event.name">
+    <h4 *ngSwitchCase="'Scarlet'">Admin</h4>
+    <h4 *ngSwitchDefault>Guest</h4>
+  </div>
+
+  <ul>
+<!--
+    [hidden] hides the element if the value is true
+    Use this if you want to hide an element/component but you still want the component to render
+    -->
+    <li [hidden]="!event?.day">Now: {{event?.day}} at {{event?.time}}</li>
+<!--    <li>Hunger Percentage: {{event?.hungerPercent}}%</li>-->
+<!--
+    *ngIf creates an if statement: if event is null, don't display the li tag
+    this comments out ab entire tag/component, so the browser will not render it at all
+    -->
+    <li *ngIf="event?.hungerPercent">Hunger Percentage: {{event?.hungerPercent}}%</li>
+    <li [ngClass]="energyPercent()">Energy Percentage: {{event?.energyPercent}}%</li>
+  </ul>
+  <h3>{{event?.name}}'s fun facts</h3>
 
   <!--  style.css is imported from the angular.json file-->
   <div class="fun-facts">
     <div>
-      <h4>Starter: {{event.pokemon.starter}}</h4>
-      <img src="{{event.imageURL.starter}}"/>
+      <h4>Starter: {{event?.pokemon.starter}}</h4>
+      <img src="{{event?.imageURL.starter}}"/>
     </div>
     <div>
-      <h4>Favorite: {{event.pokemon.favorite}}</h4>
-      <img src="{{event.imageURL.favorite}}"/>
+      <h4>Favorite: {{event?.pokemon.favorite}}</h4>
+      <img src="{{event?.imageURL.favorite}}"/>
     </div>
     <div>
-      <h4>Legendary: {{event.pokemon.legendary}}</h4>
-      <img src="{{event.imageURL.legendary}}"/>
+      <h4>Legendary: {{event?.pokemon.legendary}}</h4>
+      <img src="{{event?.imageURL.legendary}}"/>
     </div>
   </div>
 </div>

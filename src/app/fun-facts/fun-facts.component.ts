@@ -21,4 +21,14 @@ export class FunFactsComponent {
     reaction.src = './assets/images/JigglypuffAngry.png';
     document.querySelector('body').appendChild(reaction);
   }
+
+  // tslint:disable-next-line:typedef
+  energyPercent() {
+    if (this.event && this.event.energyPercent < 50) {
+      // return class for format the Energy Percentage
+      return ['tired'];
+    }
+    return [];
+
+  }
 }

@@ -13,6 +13,7 @@ h4 {
 .content {
   border: solid #ccc;
   border-radius: 10px;
+  margin: 10px 0;
   padding: 15px;
 }
 
@@ -24,5 +25,15 @@ h4 {
 
 .fun-facts div {
   align-self: flex-end;
+}
+
+.admin {
+  text-decoration: lightcoral underline;
+}
+
+.tired {
+  color: red;
+  background-color: black;
+  font-weight: bold;
 }
 
