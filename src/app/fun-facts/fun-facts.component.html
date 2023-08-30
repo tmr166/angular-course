@@ -1,10 +1,10 @@
 <div class="content">
 
   <div class="d-flex row p-3">
-<!--
-  Null handling: Add a question mark '?' after an object in case the object is null
-                 the tag will still print
-  -->
+    <!--
+      Null handling: Add a question mark '?' after an object in case the object is null
+                     the tag will still print
+      -->
     <img style="height: 100px" src="{{event?.imageURL.icon}}"/>
     <h1 class="align-self-end">Hi :)</h1>
   </div>
@@ -15,26 +15,26 @@
     the default if no switch cases are met: print the guest <span>
 -->
   <h3>{{event?.name}}'s boring stuff</h3>
-<!--
-   If statement to set a class:
-   Here, if event.name == 'Scarlet', set class = admin
--->
-  <div [class.admin]="event?.name ==='Scarlet'"  [ngSwitch]="event.name">
+  <!--
+     If statement to set a class:
+     Here, if event.name == 'Scarlet', set class = admin
+  -->
+  <div [class.admin]="event?.name ==='Scarlet'" [ngSwitch]="event.name">
     <h4 *ngSwitchCase="'Scarlet'">Admin</h4>
     <h4 *ngSwitchDefault>Guest</h4>
   </div>
 
   <ul>
-<!--
-    [hidden] hides the element if the value is true
-    Use this if you want to hide an element/component but you still want the component to render
-    -->
+    <!--
+        [hidden] hides the element if the value is true
+        Use this if you want to hide an element/component but you still want the component to render
+        -->
     <li [hidden]="!event?.day">Now: {{event?.day}} at {{event?.time}}</li>
-<!--    <li>Hunger Percentage: {{event?.hungerPercent}}%</li>-->
-<!--
-    *ngIf creates an if statement: if event is null, don't display the li tag
-    this comments out ab entire tag/component, so the browser will not render it at all
-    -->
+    <!--    <li>Hunger Percentage: {{event?.hungerPercent}}%</li>-->
+    <!--
+        *ngIf creates an if statement: if event is null, don't display the li tag
+        this comments out ab entire tag/component, so the browser will not render it at all
+        -->
     <li *ngIf="event?.hungerPercent">Hunger Percentage: {{event?.hungerPercent}}%</li>
     <li [ngClass]="energyPercent()">Energy Percentage: {{event?.energyPercent}}%</li>
   </ul>
